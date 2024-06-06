@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="indexMainLogo">
+    <div class="textLogo">Notes...</div>
+</div>
+<h2>Create a note for yourself!</h2>
+<h2>Your Note Entries:</h2>
+<section class="mainTitleInput">
+    <div class="blockWork">
+        <h2>Work:</h2>
+        <div class="startFromHere">
+            <a class="forNewEntry" href="{{ url_for('create') }}"><strong>Add new...</strong></a>
+        </div>
+        <ul>
+            {% for entry in topics.work %}
+            <li>
+                <strong>{{ entry.title }}</strong> ({{ entry.date }})
+                <a href="{{ url_for('edit', entry_id=entry.id) }}"><h3>Edit</h3></a>
+                <form action="{{ url_for('delete', entry_id=entry.id) }}" method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                    <button type="submit">✖</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="blockPersonal">
+        <h2>Personal:</h2>
+        <div class="startFromHere">
+            <a class="forNewEntry" href="{{ url_for('create') }}"><strong>Add a new..</strong></a>
+        </div>
+        <ul>
+            {% for entry in topics.personal %}
+                <li>
+                    <strong>{{ entry.title }}</strong> ({{ entry.date }})
+                    <a href="{{ url_for('edit', entry_id=entry.id) }}"><h3>Edit</h3></a>
+                    <form action="{{ url_for('delete', entry_id=entry.id) }}" method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                    <button type="submit">✖</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="blockOther">
+        <h2>Other:</h2>
+        <div class="startFromHere">
+            <a class="forNewEntry" href="{{ url_for('create') }}"><strong>Add a new..</strong></a>
+        </div>
+        <ul>
+            {% for entry in topics.other %}
+                <li>
+                    <strong>{{ entry.title }}</strong> ({{ entry.date }})
+                    <a href="{{ url_for('edit', entry_id=entry.id) }}"><h3>Edit</h3></a>
+                    <form action="{{ url_for('delete', entry_id=entry.id) }}" method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                        <button type="submit">✖</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
+

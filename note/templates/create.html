@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="createNewNoteSection">
+        <h2>Add a New Entry</h2>
+        <form id="createForm" method="post" action="{{ url_for('create') }}">
+            <label for="createTitle">Title:<span class="theMust">*</span></label><br>
+            <div class="forCreateTitle">
+                <input type="text" id="createTitle" name="createTitle" placeholder="Enter Title" required class="truncate"><br>
+            </div>
+            <label for="createDate">Date:</label><br>
+            <div class="forCreateDate">
+                <input type="date" id="createDate" name="createDate"><br>
+            </div>
+            <label for="createText">Text:</label><br>
+            <div class="forCreateText">
+                <textarea id="createText" name="createText" rows="6" placeholder="Write Something Here..."></textarea>
+            </div>
+            <label for="createTopic">Topic:</label>
+            <div class="forCreateTopic">
+                <select id="createTopic" name="createTopic">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <input type="submit" value="Add Entry">
+        </form>
+        <div class="backButton">
+            <a href="{{ url_for('index') }}">Back</a>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>About Us</h2>
+    <p>Welcome to the Note application! This project allows you to create, edit, and delete personal notes organized into categories like Work, Personal, and Other.</p>
+    <p>Features:</p>
+    <div class="aboutUsTable">
+        <ul>
+            <li>Create new notes with titles, dates, and content.</li>
+            <li>Edit existing notes to update information.</li>
+            <li>Delete notes that are no longer needed.</li>
+            <li>Organize notes into categories for easy management.</li>
+        </ul>
+    </div>
+    <p>We hope this application helps you keep track of your tasks and thoughts effectively!</p>
+    <div class="backButton">
+    <a href="{{ url_for('index') }}">Back</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Edit Entry</h2>
+    <form id="editForm" method="post" action="{{ url_for('edit', entry_id=entry.id) }}">
+        <label for="editTitle">Title:</label><br>
+        <input type="text" id="editTitle" name="editTitle" value="{{ entry.title }}"><br>
+        <label for="editDate">Date:</label><br>
+        <input type="date" id="editDate" name="editDate" value="{{ entry.date }}"><br>
+        <label for="editText">Text:</label><br>
+        <textarea id="editText" name="editText">{{ entry.text }}</textarea><br>
+        <label for="editTopic">Topic:</label><br>
+        <select id="editTopic" name="editTopic">
+            <option value="work" {% if entry.topic == 'work' %}selected{% endif %}>Work</option>
+            <option value="personal" {% if entry.topic == 'personal' %}selected{% endif %}>Personal</option>
+            <option value="other" {% if entry.topic == 'other' %}selected{% endif %}>Other</option>
+        </select><br>
+        <div class="forUpdateButton">
+        <input type="submit" value="Update Entry">
+        </div>
+    </form>
+
+    <form id="deleteForm" method="post" action="{{ url_for('delete', entry_id=entry.id) }}">
+        <input type="hidden" name="deleteMethod" value="DELETE">
+        <input type="submit" value="Delete Entry" onclick="return confirmDelete();">
+    </form>
+    <div class="backButton">
+        <a href="{{ url_for('index') }}">Back</a>
+    </div>
+{% endblock %}

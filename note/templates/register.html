@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="registerSection">
+        <h3>Register</h3>
+        <form class="forRegister" method="post" action="{{ url_for('register') }}">
+            <div class="registerCheckbox">
+            <input type="checkbox" id="marked" name="marked" required/>
+                <label for="marked"><h6>You need to tick for register:</h6></label>
+            </div>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" onblur="checkUsername()" required><br>
+            <span id="usernameError" style="color: red;"></span>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+    </section>
+{% endblock %}

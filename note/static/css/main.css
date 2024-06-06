@@ -1,0 +1,332 @@
+/* Basic styles for mobile devices */
+body {
+    background: rgb(40,40,82);
+    background: linear-gradient(29deg, rgba(40,40,82,1) 1%, rgba(22,47,46,1) 23%, rgba(37,42,45,1) 41%, rgba(22,31,37,1) 49%, rgba(39,52,48,1) 66%, rgba(78,101,57,0.9920343137254902) 87%, rgba(21,36,12,1) 97%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.textLogo{
+    text-align:center;
+    font: italic small-caps bold 16px/2 cursive;
+    font-size: 48px;
+    font-weight: 700;
+    color: #034f84;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 14s infinite;
+    margin:5px 50px;
+}
+
+
+.headerWrapper {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.startFromHere, .aboutUsTable ul{
+    display: flex;
+    align-items: center;
+}
+
+.forNewEntry {
+    margin-right: 10px;
+}
+
+.createNewNoteSection{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.forCreateTitle,
+.forCreateDate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+section {
+    width: 100%;
+}
+
+.navBarSelector ul {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.mainTitleInput {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mainTitleInput div {
+    display: inline-block;
+    margin: 12px auto;
+    text-align:center;
+
+}
+
+h1, h2 {
+    color: #aec8e2;
+    text-align: center;
+    padding: 0;
+}
+
+p {
+    color: white;
+}
+
+h3 {
+    color: #aec8e2;
+    margin: 0;
+    text-align: center;
+    width:100%;
+}
+
+.loginSection h3{
+    align-items: start;
+    width: 2rem;
+}
+
+form {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+form label{
+    margin:5px 0;
+}
+
+.forRegister:last-child() {
+    margin: 10px;
+}
+
+.registerCheckbox {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+h6 {
+    margin: 5px;
+}
+
+.forRegister label {
+    margin: 0;
+    padding: 0;
+}
+
+.registerSection form{
+height:80%;
+display: inline-flex;
+flex-direction: column;
+}
+
+label {
+    display: inline-block;
+    margin: 10px;
+    color: #bdbdbd;
+}
+
+.forUpdateButton{
+    margin: 10px 0;
+}
+
+.forCreateText {
+    height: 100px;
+    overflow: clip;
+    resize: none;
+    padding: 0;
+}
+
+.forCreateText textarea {
+    width: 100%;
+    min-height: 50px;
+    background: rgb(136,160,163);
+}
+
+.forCreateText textarea,
+.forCreateTitle input,
+.forCreateDate input,
+.forCreateTopic select {
+    background-color: #908a7f;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin: 5px 0;
+    color: #bdbdbd;
+    position: relative;
+    max-width:250px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #aec8e2;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logInAs {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    margin: 10px;
+}
+
+.forLogin, .registerSection{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    max-width: 400px;
+}
+
+.registerSection h3{
+text-align: start;
+}
+
+.registerSection input{
+margin: 10px;
+
+}
+
+.submitLogin input {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.forNewEntry {
+    color: #6ca5c1;
+    border: 2px solid white;
+    background: rgb(2,0,36);
+    background: linear-gradient(29deg, rgba(2,0,36,1) 0%, rgba(31,52,44,1) 65%, rgba(0,212,255,1) 100%);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 20px 0;
+}
+
+.forNewEntry:hover {
+    background-color: #564329;
+    color: #cfcb5e;
+}
+
+.forCreateDate {
+    width: 100%;
+}
+
+.entryTitle {
+    line-height: 1.1em;
+}
+
+.blockOther button,
+.blockPersonal button,
+.blockWork button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, background-color 1s;
+}
+
+.blockOther button:hover,
+.blockPersonal button:hover,
+.blockWork button:hover {
+    background-color: darkred;
+}
+
+.backButton {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: solid white 1px;
+    padding: 5px;
+    color: #ffffff;
+    background: #158c90;
+    border-radius: px;
+    max-width: 80px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px;
+}
+
+.backButton:hover {
+    background: #006e52;
+}
+
+footer{
+    margin: 40px auto;
+    text-align:center;
+    width: 100%;
+}
+
+@keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                transform: scale(1.1);
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            }
+        }
