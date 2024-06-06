@@ -89,7 +89,7 @@ def create():
 def edit(entry_id):
     if 'username' not in session:
         return redirect(url_for('login'))
-    entry = NoteEntry.query.filter_by(id=entry_id, user_id=session['user_id'])
+    entry = NoteEntry.query.filter_by(id=entry_id, user_id=session['user_id']).first()
     if request.method == 'POST':
         entry.title = request.form['editTitle']
         entry.date = request.form['editDate']
@@ -109,7 +109,7 @@ def edit(entry_id):
 def delete(entry_id):
     if 'username' not in session:
         return redirect(url_for('login'))
-    entry = NoteEntry.query.filter_by(id=entry_id, user_id=session['user_id'])
+    entry = NoteEntry.query.filter_by(id=entry_id, user_id=session['user_id']).first()
     try:
         db.session.delete(entry)
         db.session.commit()
